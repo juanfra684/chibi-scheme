@@ -1,27 +1,23 @@
-.TH "chibi-doc" "1" "" ""
-.UC 4
-.SH NAME
-.PP
-chibi-doc \- generate docs from Scheme scribble syntax
-
-.SH SYNOPSIS
-.B chibi-doc
-[-hst]
-[
-.I file
-]
-.BR
-
-.B chibi-doc
-.I dotted-name.of.module
-[
-.I identifier
-]
-.BR
-.SP 0.4
-
-.SH DESCRIPTION
-.I chibi-doc
+.Dd 2015-06-15
+.Dt CHIBI-DOC 1
+.Os CHIBI-DOC
+.Sh NAME
+.Nm chibi-doc
+.Nd generate docs from Scheme scribble syntax
+.Sh SYNOPSIS
+.Nm chibi-doc
+.Bk -words
+.Op Fl hst
+.Op Ar file
+.Ek
+.Pp
+.Nm chibi-doc
+.Bk -words
+.Ar dotted-name.of.module
+.Op Ar identifier
+.Ek
+.Sh DESCRIPTION
+.Em chibi-doc
 is a tool to generate documentation from the Scheme scribble syntax
 from Racket.  It works like a Unix filter, translating from the
 current input or a file to standard output.  You can also specify a
@@ -29,27 +25,20 @@ module name, with components separated with dots, and it will search
 for the module and generate documentation from it automatically from
 literate comments in the module or any of its source files.  These
 comments are any line beginning with the characters
-.I ;;>
-
+.Em ;;> .
+.Pp
 The scribble syntax is described in the manual.
-
-.SH OPTIONS
-.TP 5
-.BI -h
+.Sh OPTIONS
+.Bl -tag -width Ds
+.It Fl h
 Outputs in HTML format (the default).
-.TP
-.BI -s
+.It Fl s
 Outputs in SXML format.
-.TP
-.BI -t
+.It Fl t
 Outputs in text format (the default for describing a single variable).
-
-.SH AUTHORS
-.PP
-Alex Shinn (alexshinn @ gmail . com)
-
-.SH SEE ALSO
-.PP
+.El
+.Sh SEE ALSO
 The chibi-scheme home-page:
-.BR
-http://code.google.com/p/chibi-scheme/
+.Lk http://synthcode.com/wiki/chibi-scheme
+.Sh AUTHORS
+.An Alex Shinn Aq Mt alexshinn@gmail.com .
